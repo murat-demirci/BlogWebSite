@@ -16,11 +16,7 @@ namespace ProgrammersBlog.Data.Concrete.EntityFramework.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Log> Logs { get; set; }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlServer(
-        //        @"Server=LAPTOP-UI9DTME8\TEW_SQLEXPRESS;Database=ProgrammersBlog;Trusted_Connection=True;Connect Timeout=30;MultipleActiveResultSets=True;");
-        //}
+
         public ProgrammersBlogContext(DbContextOptions<ProgrammersBlogContext>options):base (options)
         {
 

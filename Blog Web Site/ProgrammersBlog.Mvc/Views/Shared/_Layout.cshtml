@@ -1,0 +1,204 @@
+﻿@using Microsoft.Extensions.Options
+@using ProgrammersBlog.Entities.Concrete
+@inject IOptionsSnapshot<WebsiteInfo> WebsiteInfo
+@{
+    var webSiteInfo = WebsiteInfo.Value;
+
+}
+
+
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="@webSiteInfo.SeoDescription">
+    <meta name="author" content="@webSiteInfo.SeoAuthor">
+    <meta name="keywords" content="@webSiteInfo.SeoTags" />
+
+    <title>@ViewBag.Title | @webSiteInfo.Title</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/BlogHome/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/BlogHome/css/footer.css" rel="stylesheet" />
+    <link href="~/BlogHome/css/scroll.css" rel="stylesheet" />
+
+
+    <!-- Custom styles for this template -->
+    <link href="~/BlogHome/css/blog-home.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+
+
+</head>
+<body style="background:black">
+    <link href="~/BlogHome/css/load.css" rel="stylesheet" />
+    <div class="centered">
+        <div class="blob-1"></div>
+        <div class="blob-2"></div>
+        <script>
+            let loadaction = document.querySelector('.centered');
+            window.addEventListener('load', function () {
+                loadaction.parentElement.removeChild(loadaction);
+            });
+        </script>
+    </div>
+    <div id="back-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    <!-- Navigation -->
+
+
+    <partial name="_MainMenuPartial" />
+    <!-- Page Content -->
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            @RenderBody()
+
+            <!-- Sidebar Widgets Column -->
+
+            @await Component.InvokeAsync("RigthSideBar")
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+    <!-- Footer -->
+    <!--<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; MuratDemirci</p>
+    </div>-->
+    <!-- /.container -->
+    <!--</footer>-->
+
+    <div class="div-one container-fluid pb-0 mb-0 justify-content-center text-light ">
+        <footer>
+            <div class="row my-5 justify-content-center py-5">
+                <div class="col-11">
+                    <div class="row ">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-12 my-auto mx-auto a">
+                            <h3 class="h3-one text-muted mb-md-0 mb-5 bold-text">Sosyal Medya</h3>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="mb-3 mb-lg-4 bold-text "><b>MENU</b></h6>
+                            <ul class="list-group">
+                                <li><a asp-controller="Home" asp-action="Index" style="color: #627482 ;text-decoration: unset"><b>Anasayfa</b></a></li>
+                                <li><a asp-controller="Home" asp-action="About" style="color: #627482; text-decoration: unset"><b>Hakkında</b></a></li>
+                                <li><a asp-controller="Home" asp-action="Contact" style="color: #627482; text-decoration: unset "><b>İletişim</b></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-12">
+                            <h6 class="mb-3 mb-lg-4 text-muted bold-text mt-sm-0 mt-5"><b>Hakkımda</b></h6>
+                            <p class="mb-1">Merhaba! Ben Murat. @(@DateTime.Now.Year-1999) yaşında bilgisayar mühendisliği öğrencisiyim. Umarım web sitemi ve içeriklerimi beğenirsiniz </p>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xl-8 col-md-4 col-sm-4 col-auto my-md-0 mt-5 order-sm-1 order-3 align-self-end">
+                            <ul ontouchstart>
+                                <li>
+                                    <div class='link'>
+                                        <a href='https://twitter.com/demircimuradd' target='_blank'></a>
+                                        <a href='https://twitter.com/demircimuradd' target='_blank'></a>
+                                        <a href='https://twitter.com/demircimuradd' target='_blank'></a>
+                                        <a href='https://twitter.com/demircimuradd' target='_blank'></a>
+                                        <div class='cube twitter'>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div>
+                                                <img src="https://img.icons8.com/color/64/000000/twitter--v1.png" />
+                                                @*<svg viewbox='0 0 85 85'>
+                                                        <path d='M82.5,29.1666667 L42.5,2.5 L2.5,29.1666667 L2.5,55.8922001 L42.5,82.5 L82.5,55.8922001 L82.5,29.1666667 Z M42.5,2.9120677 L42.5,29.1666667 L42.5,2.9120677 Z M42.5,55.8922001 L42.5,82.5 L42.5,55.8922001 Z M2.5,29.1666667 L2.5,55.8922001 L42.5,29.1666667 L82.5,55.8922001 L82.5,29.1666667 L42.5,55.8922001 L2.5,29.1666667 Z'></path>
+                                                    </svg>*@
+                                            </div>
+                                            <div style="font-size:13px">demircimuradd</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='link'>
+                                        <a href='https://www.linkedin.com/in/murat-demirci-a83628174/' target='_blank'></a>
+                                        <a href='https://www.linkedin.com/in/murat-demirci-a83628174/' target='_blank'></a>
+                                        <a href='https://www.linkedin.com/in/murat-demirci-a83628174/' target='_blank'></a>
+                                        <a href='https://www.linkedin.com/in/murat-demirci-a83628174/' target='_blank'></a>
+                                        <div class='cube linkedin'>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div>
+                                                <img src="https://img.icons8.com/ios/50/000000/linkedin-2--v1.png" />
+                                                @*<svg viewbox='0 0 85 85'>
+                                                        <path d='M82.5,29.1666667 L42.5,2.5 L2.5,29.1666667 L2.5,55.8922001 L42.5,82.5 L82.5,55.8922001 L82.5,29.1666667 Z M42.5,2.9120677 L42.5,29.1666667 L42.5,2.9120677 Z M42.5,55.8922001 L42.5,82.5 L42.5,55.8922001 Z M2.5,29.1666667 L2.5,55.8922001 L42.5,29.1666667 L82.5,55.8922001 L82.5,29.1666667 L42.5,55.8922001 L2.5,29.1666667 Z'></path>
+                                                    </svg>*@
+                                            </div>
+                                            <div style="font-size:13px">muratdemirci</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class='link'>
+                                        <a href='https://github.com/murat-demirci' target='_blank'></a>
+                                        <a href='https://github.com/murat-demirci' target='_blank'></a>
+                                        <a href='https://github.com/murat-demirci' target='_blank'></a>
+                                        <a href='https://github.com/murat-demirci' target='_blank'></a>
+                                        <div class='cube github'>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div></div>
+                                            <div>
+                                                <svg viewbox='0 0 85 85'>
+                                                    <path class='fill' d='M76.7 19c1.1-4.8 0.6-10.1-1.6-15 -0.7-1.7-2.3-2.9-4.2-3 -0.5-0.1-1.1-0.1-1.6-0.1 -4.6 0-10.7 1.6-15 5C50.4 5 46.4 4.6 42.5 4.6V4.4c-3.9 0-7.9 0.4-11.8 1.3 -4.3-3.4-10.4-5-15-5 -0.5 0-1.1 0-1.6 0.1 -1.9 0.1-3.5 1.3-4.2 3C7.7 8.7 7.2 14 8.3 18.8c-3.3 4.4-5 9.6-5 15.4 0 12.5 4.2 21.4 12.5 26.4 2.6 1.6 5.6 2.9 9 3.7 -0.6 1.7-0.9 3.7-0.9 6.1v11.2h0c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5l0-11c0-4.5 1.5-7.7 4.5-9.7 -1.5-0.1-3.2-0.3-5.2-0.8 -3.8-0.7-7-1.9-9.7-3.6C11.6 52.4 8.3 45.1 8.3 34.4c0-5.6 1.9-10.3 5.6-14.3 -1.7-4.4-1.4-9.6 0.6-14.3 0.4 0 0.8 0 1.2 0 4.9 0 10.8 2.2 13.5 5.5 4.5-1.2 9-1.8 13.3-1.8v0.1c4.3 0 8.8 0.6 13.3 1.8 2.7-3.3 8.6-5.5 13.5-5.5 0.4 0 0.8 0 1.2 0 2 4.7 2.3 9.9 0.6 14.3 3.7 4 5.6 8.7 5.6 14.3 0 10.7-3.3 18-10.2 22.2 -2.7 1.7-5.9 2.9-9.7 3.6 -2 0.5-3.7 0.7-5.2 0.8 3 2 4.5 5.2 4.5 9.7l0 11c0 1.4 1.1 2.5 2.5 2.5s2.5-1.1 2.5-2.5h0V70.6c0-2.4-0.3-4.4-0.9-6.1 3.4-0.8 6.4-2.1 9-3.7 8.3-5 12.5-13.9 12.5-26.4C81.7 28.6 80 23.4 76.7 19z'></path>
+                                                </svg>
+                                            </div>
+                                            <div style="font-size:13px">muratdemirci</div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <svg class='clips' viewbox='0 0 0 0' xmlns='http://www.w3.org/2000/svg'>
+                                <defs>
+                                    <clippath id='clip-right'>
+                                        <polygon id='right' points='48 0 48 96 0 48'></polygon>
+                                    </clippath>
+                                    <clippath id='clip-left'>
+                                        <polygon id='left' points='0 0 0 96 48 48'></polygon>
+                                    </clippath>
+                                    <clippath id='clip-bottom'>
+                                        <polygon id='bottom' points='96 48 0 48 48 0'></polygon>
+                                    </clippath>
+                                    <clippath id='clip-top'>
+                                        <polygon id='top' points='0 0 96 0 48 48'></polygon>
+                                    </clippath>
+                                </defs>
+                            </svg>
+
+                        </div>
+                        <div class="col-xl-2 col-md-4 col-sm-4 col-auto order-1 align-self-end ">
+                            <h6 class="mt-55 mt-2 text-muted bold-text"><b>E-Posta</b></h6><small> <span><i class="fa fa-envelope" aria-hidden="true"></i></span> ddemircimuratt@gmail.com</small>
+                        </div>
+                        @*<div class="col-xl-2 col-md-4 col-sm-4 col-auto order-2 align-self-end mt-3 ">
+                                <h6 class="text-muted bold-text"><b>RISHABH SHEKHAR</b></h6><small><span><i class="fa fa-envelope" aria-hidden="true"></i></span> rishab@gmail.com</small>
+                            </div>*@
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/BlogHome/vendor/jquery/jquery.min.js"></script>
+    <script src="~/BlogHome/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" crossorigin="anonymous"></script>
+    <script src="~/BlogHome/js/scroll.js"></script>
+    @await RenderSectionAsync("Scripts", false)
+</body>
+
+</html>
+
+

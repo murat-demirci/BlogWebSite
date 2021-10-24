@@ -1,0 +1,70 @@
+﻿@using ProgrammersBlog.Shared.Entities.Concrete
+@{
+    Layout = "_ErrorLayout";
+    ViewBag.Title = "Error 500";
+    MvcErrorModel errorModel = ViewData["MvcErrorModel"] as MvcErrorModel;
+}
+<link href="~/BlogHome/css/Error500.css" rel="stylesheet" />
+
+<h1>@errorModel.Message <a asp-controller="Home" asp-action="Index" style="color:#0012d9; font-weight:bold"> Anasayfa<i class="fas fa-arrow-right ml-1"></i></a></h1>
+@if (errorModel.Detail!=null)
+{
+    <p>@errorModel.Detail</p>
+}
+<div class='post'></div>
+<div class='outer'>
+    <div class='wrap'>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+        <div class='error'></div>
+    </div>
+</div>
+
+

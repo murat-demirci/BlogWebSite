@@ -1,0 +1,78 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Old+Standard+TT);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+h1.h1, h2.h2, h4.h4, .meta-data {
+    text-align: center;
+    color: rgb(222 222 222)
+}
+
+h1.h1 {
+    font-weight: 900;
+    font-size: 3em;
+}
+
+    h1.h1:first-of-type {
+        font-family: "Old Standard TT", serif;
+        text-align: left;
+        color: lightgrey;
+        font-size: 1.4em;
+    }
+
+
+h4.h4 {
+    font-weight: normal;
+    font-size: 0.8em;
+    text-align: left;
+    margin-top:5px;
+    color: rgb(222 222 222)
+}
+
+hr {
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 2.42105263em;
+    margin-bottom: 1.42105263em;
+}
+
+p.p {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    color: rgb(222 222 222)
+}
+
+i {
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.meta-data {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 2px 4px;
+}
+
+.profile {
+    display: block;
+    width: 700px;
+    height: 450px;
+    margin: 0 auto;
+    border-radius: 20% 20% 0% 20%;
+}
+
+
+@media screen and (max-width: 600px) {
+    h1.h1 {
+        font-size: 1.4em;
+
+    }
+
+    p.p {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+
+}
+

@@ -1,0 +1,99 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+.navMenu {
+    position: absolute;
+    top: 0.9%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor:none;
+}
+
+    .navMenu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        display: inline-block;
+        width: 125px;
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        cursor: none;
+    }
+
+        .navMenu a:hover {
+            color: #0017ca;
+            cursor:pointer;
+        }
+
+    .navMenu .dot {
+        width: 6px;
+        height: 6px;
+        background: #0017ca;
+        border-radius: 50%;
+        opacity: 0;
+        -webkit-transform: translateX(30px);
+        transform: translateX(30px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        cursor: none;
+    }
+
+    .navMenu a:nth-child(1):hover ~ .dot {
+        -webkit-transform: translateX(30px);
+        transform: translateX(45px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+
+    .navMenu a:nth-child(2):hover ~ .dot {
+        -webkit-transform: translateX(110px);
+        transform: translateX(175px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+
+    .navMenu a:nth-child(3):hover ~ .dot {
+        -webkit-transform: translateX(200px);
+        transform: translateX(290px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+
+    .navMenu a:nth-child(4):hover ~ .dot {
+        -webkit-transform: translateX(280px);
+        transform: translateX(450px);
+        -webkit-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        opacity: 1;
+    }
+    /*Border*/
+.navMenu {
+    --x: 50%;
+    --y: 50%;
+    margin-top:15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 1em 2em;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 100px;
+    border: 2px solid transparent;
+    background: linear-gradient(#000, #000) padding-box, radial-gradient(farthest-corner at var(--x) var(--y), #00C9A7, #845EC2) border-box;
+}
+/*Border*/

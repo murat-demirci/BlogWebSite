@@ -1,0 +1,101 @@
+﻿@model ProgrammersBlog.Entities.Dtos.UserLoginDto
+@{
+       Layout = "_UserLoginLayout";
+       ViewBag.Title = "Giriş yap";
+    }
+<head>
+        <link href="/AdminLTE/css/Login.css" rel="stylesheet" />
+    </head>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5">
+                <div >
+
+                    <div>
+                        <form class="form" asp-area="Admin" asp-controller="Auth" asp-action="Login" method="post">
+                            <div class='control'>
+                                <h1 style="color:white">
+                                    Giriş yap
+                                </h1>
+                            </div>
+                            <div class='control block-cube block-input'>
+                                <input class="form-control" asp-for="Email" placeholder='Email' type='email'>
+                                <div class='bg-top'>
+                                    <div class='bg-inner'></div>
+                                </div>
+                                <div class='bg-right'>
+                                    <div class='bg-inner'></div>
+                                </div>
+                                <div class='bg'>
+                                    <div class='bg-inner'></div>
+                                </div>
+                            </div>
+                            <div class='control block-cube block-input'>
+                                <input class="form-control" asp-for="Password" placeholder='Şifre' type='password'>
+                                <div class='bg-top'>
+                                    <div class='bg-inner'></div>
+                                </div>
+                                <div class='bg-right'>
+                                    <div class='bg-inner'></div>
+                                </div>
+                                <div class='bg'>
+                                    <div class='bg-inner'></div>
+                                </div>
+                            </div>
+                            <div class="demo">
+
+
+                            <label class="toggle" for="uniqueID" style="color:snow">
+                                <input type="checkbox" asp-for="RememberMe" class="toggle__input" id="uniqueID" />
+                                <span class="toggle-track">
+                                    <span class="toggle-indicator">
+                                        <span class="checkMark">
+                                            @*<svg viewBox="0 0 24 24" id="ghq-svg-check" role="presentation" aria-hidden="true">
+                                                <path d="M9.86 18a1 1 0 01-.73-.32l-4.86-5.17a1.001 1.001 0 011.46-1.37l4.12 4.39 8.41-9.2a1 1 0 111.48 1.34l-9.14 10a1 1 0 01-.73.33h-.01z"></path>
+                                            </svg>*@
+                                        </span>
+                                    </span>
+                                </span>
+                                Beni Hatırla
+                            </label>
+                        </div>
+                        <button class='btn block-cube block-cube-hover mt-3' type='submit'>
+                            <div class='bg-top'>
+                                <div class='bg-inner'></div>
+                            </div>
+                            <div class='bg-right'>
+                                <div class='bg-inner'></div>
+                            </div>
+                            <div class='bg'>
+                                <div class='bg-inner'></div>
+                            </div>
+                            <div class='text'>
+                                Giriş
+                            </div>
+                        </button>
+                        <div asp-validation-summary="All" class="text-danger mt-2"></div>
+                        <div class='credits'>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                        <div class="text-muted">
+                            <a>
+                                Copyright &copy; MuratDemirciBlog
+                            </a>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="card-footer text-center">
+                    <a style="border-block-start-style: hidden; border-block-end-style: hidden; color:white" class="btn bg-succes btn-outline-success btn-block">Hesabın yok mu? Kayıt Ol!</a>
+                </div>
+                <div class="card-footer text-center">
+                    <a style="border-block-start-style: hidden; border-block-end-style: hidden; color:white" class="btn bg-succes btn-outline-success btn-block" asp-area="Areas" asp-controller="Home" asp-action="Index">Ana Sayfa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

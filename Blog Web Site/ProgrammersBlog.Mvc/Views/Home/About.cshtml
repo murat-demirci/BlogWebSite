@@ -1,0 +1,51 @@
+﻿@model ProgrammersBlog.Entities.Concrete.AboutUsPageInfo
+@{
+    Layout = "_AboutLayout";
+    ViewBag.Title = "Hakkinda";
+    ViewBag.Description = Model.SeoDescription;
+    ViewBag.Tags = Model.SeoTags;
+    ViewBag.Author = Model.SeoAuthor;
+}
+
+<link href="~/BlogHome/css/about.css" rel="stylesheet" />
+<div class="box">
+    <figure>
+        <img src="https://static.pexels.com/photos/9694/pexels-photo-large.jpeg" alt="jelly" />
+    </figure>
+    <div class="cat">
+        @Model.Header
+    </div>
+    <p>
+        @Model.Content
+    </p>
+    <div class="cta">
+        <a asp-controller="Home" asp-action="Contact" class="btn">İletişim</a>
+    </div>
+</div>
+
+<link href="~/BlogHome/css/load.css" rel="stylesheet" />
+<div class="centered">
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+    <script>
+            let loadaction = document.querySelector('.centered');
+            window.addEventListener('load', function () {
+                loadaction.parentElement.removeChild(loadaction);
+            });
+    </script>
+</div>
+@*<div class="container-fluid">
+        <div class="jumbotron mt-4">
+            <div class="d-flex align-items-center h-100">
+                <div class="container text-center py-5">
+                    <img src="~/img/defaultThumbnail.jpg" alt="Logo" class="img-fluid mb-1"/>
+                    <div class="container mt-4 mb-5">
+                        <h2 class="text-center py-3 mb-5">@Model.Header</h2>
+                        <div class="text-center">
+                            <p>@Model.Content</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>*@
